@@ -5,11 +5,13 @@
 # Command: ./scripts/formatting/generate_frostt_formats.sh 
 
 DATASET_NAMES=(
-  fb1k
-  fb10k
-  facebook
-  nell-2
-  nell-1
+  uber3
+  #uber-pickups
+  #fb1k
+  #fb10k
+  #facebook
+  #nell-2
+  #nell-1
 )
 
 IGNORED_NAMES=(
@@ -28,8 +30,8 @@ for i in ${!FORMATS[@]}; do
     format=${FORMATS[@]};
     echo "Generating files for format $format..."
     
-    $basedir/compiler/taco/build/bin/taco-test sam.pack_$format
-    $basedir/compiler/taco/build/bin/taco-test sam.pack_other_frostt
+    # $basedir/compiler/taco/build/bin/taco-test sam.pack_$format
+    # $basedir/compiler/taco/build/bin/taco-test sam.pack_other_frostt
 
     for j in ${!DATASET_NAMES[@]}; do
         
